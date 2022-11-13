@@ -5,13 +5,22 @@ import tkinter.font as font
 from tkinter import filedialog
 
 #add many songs to the playlist of python mp3 player
+    #creating the root window 
+root=Tk()
+root.title('DataFlair Python MP3 Music player App ')
+#initialize mixer 
+mixer.init()
+
+#create the listbox to contain songs
+songs_list=Listbox(root,selectmode=SINGLE,bg="black",fg="white",font=('arial',15),height=12,width=47,selectbackground="gray",selectforeground="black")
+songs_list.grid(columnspan=9)
 def addsongs():
     #to open a file  
-    temp_song=filedialog.askopenfilenames(initialdir="Music/",title="Choose a song", filetypes=(("mp3 Files","*.mp3"),))
+    temp_song=filedialog.askopenfilenames(initialdir="",title="Choose a song", filetypes=(("mp3 Files","*.mp3"),))
     ##loop through every item in the list to insert in the listbox
     for s in temp_song:
-        s=s.replace("C:/Users/DataFlair/python-mp3-music-player/","")
-        songs_list.insert(END,s)
+     s=s.replace("/Users/garfield/Documents/web project/mp3player/","")
+     songs_list.insert(END,s)
      
 def deletesong():
     curr_song=songs_list.curselection()
@@ -20,7 +29,7 @@ def deletesong():
     
 def Play():
     song=songs_list.get(ACTIVE)
-    song=f'C:/Users/lenovo/Desktop/DataFlair/Notepad/Music/{song}'
+    song=f'{song}'
     mixer.music.load(song)
     mixer.music.play()
 
@@ -46,7 +55,7 @@ def Previous():
     previous_one=previous_one[0]-1
     #to get the previous song
     temp2=songs_list.get(previous_one)
-    temp2=f'C:/Users/DataFlair/python-mp3-music-player/{temp2}'
+    temp2=f'/Users/garfield/Documents/web project/mp3player/{temp2}'
     mixer.music.load(temp2)
     mixer.music.play()
     songs_list.selection_clear(0,END)
@@ -62,7 +71,7 @@ def Next():
     next_one=next_one[0]+1
     #to get the next song 
     temp=songs_list.get(next_one)
-    temp=f'C:/Users/DataFlair/python-mp3-music-player/{temp}'
+    temp=f'/Users/garfield/Documents/web project/mp3player/{temp}'
     mixer.music.load(temp)
     mixer.music.play()
     songs_list.selection_clear(0,END)
@@ -71,15 +80,7 @@ def Next():
      #set the next song
     songs_list.selection_set(next_one)
 
-    #creating the root window 
-root=Tk()
-root.title('DataFlair Python MP3 Music player App ')
-#initialize mixer 
-mixer.init()
 
-#create the listbox to contain songs
-songs_list=Listbox(root,selectmode=SINGLE,bg="black",fg="white",font=('arial',15),height=12,width=47,selectbackground="gray",selectforeground="black")
-songs_list.grid(columnspan=9)
 
 #font is defined which is to be used for the button font 
 defined_font = font.Font(family='Helvetica')
