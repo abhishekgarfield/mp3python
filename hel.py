@@ -16,10 +16,10 @@ songs_list=Listbox(root,selectmode=SINGLE,bg="black",fg="white",font=('arial',15
 songs_list.grid(columnspan=9)
 def addsongs():
     #to open a file  
-    temp_song=filedialog.askopenfilenames(initialdir="",title="Choose a song", filetypes=(("mp3 Files","*.mp3"),))
+    temp_song=filedialog.askopenfilenames(initialdir="/Users/garfield/Documents/web project/mp3player/music/",title="Choose a song", filetypes=(("mp3 Files","*.mp3"),))
     ##loop through every item in the list to insert in the listbox
     for s in temp_song:
-     s=s.replace("/Users/garfield/Documents/web project/mp3player/","")
+     s=s.replace("/Users/garfield/Documents/web project/mp3player/music/","")
      songs_list.insert(END,s)
      
 def deletesong():
