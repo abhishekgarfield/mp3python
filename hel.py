@@ -76,7 +76,7 @@ def Next():
     mixer.music.play()
     songs_list.selection_clear(0,END)
     #activate newsong
-    songs_list.activate(next_one)
+    songs_list.activate(next_one) #hello
      #set the next song
     songs_list.selection_set(next_one)
 
