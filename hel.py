@@ -5,9 +5,9 @@ import tkinter.font as font
 from tkinter import filedialog
 
 #add many songs to the playlist of python mp3 player
-    #creating the root window 
+#creating the root window 
 root=Tk()
-root.title('DataFlair Python MP3 Music player App ')
+root.title('MP3 Music player')
 #initialize mixer 
 mixer.init()
 
