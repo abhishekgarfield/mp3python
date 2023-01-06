@@ -19,8 +19,8 @@ def addsongs():
     temp_song=filedialog.askopenfilenames(initialdir="/Users/garfield/Documents/web project/mp3player/music/",title="Choose a song", filetypes=(("mp3 Files","*.mp3"),))
     ##loop through every item in the list to insert in the listbox
     for s in temp_song:
-     s=s.replace("/Users/garfield/Documents/web project/mp3player/music/","")
-     songs_list.insert(END,s)
+     s=s.replace("","")
+     songs_list.insert(END,s) 
      
 def deletesong():
     curr_song=songs_list.curselection()
@@ -55,7 +55,7 @@ def Previous():
     previous_one=previous_one[0]-1
     #to get the previous song
     temp2=songs_list.get(previous_one)
-    temp2=f'/Users/garfield/Documents/web project/mp3player/{temp2}'
+    temp2=f'{temp2}'
     mixer.music.load(temp2)
     mixer.music.play()
     songs_list.selection_clear(0,END)
@@ -71,7 +71,7 @@ def Next():
     next_one=next_one[0]+1
     #to get the next song 
     temp=songs_list.get(next_one)
-    temp=f'/Users/garfield/Documents/web project/mp3player/{temp}'
+    temp=f'{temp}'
     mixer.music.load(temp)
     mixer.music.play()
     songs_list.selection_clear(0,END)
@@ -123,5 +123,5 @@ my_menu.add_cascade(label="Menu",menu=add_song_menu)
 add_song_menu.add_command(label="Add songs",command=addsongs)
 add_song_menu.add_command(label="Delete song",command=deletesong)
 
-
+# coded by garfield
 mainloop()
