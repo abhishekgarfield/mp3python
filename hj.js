@@ -142,7 +142,7 @@
             url: i.b.CALCULATOR + i.b.SLASH + B.a.CANARA_BANK_SIP_CALCULATOR,
           },
           {
-            label: "DHFL SIP Calculator",
+            label: "DHFL SIP Calculator",  
             url: i.b.CALCULATOR + i.b.SLASH + B.a.DHFL_SIP_CALCULATOR,
           },
           {
