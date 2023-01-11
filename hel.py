@@ -118,7 +118,7 @@ next_button.grid(row=1,column=5)
 #menu 
 my_menu=Menu(root)
 root.config(menu=my_menu)
-add_song_menu=Menu(my_menu)  
+add_song_menu=Menu(my_menu)    
 my_menu.add_cascade(label="Menu",menu=add_song_menu)
 add_song_menu.add_command(label="Add songs",command=addsongs)
 add_song_menu.add_command(label="Delete song",command=deletesong)
